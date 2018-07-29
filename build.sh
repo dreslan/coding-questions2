@@ -2,7 +2,8 @@
 set -x
 
 # get changed files
-FILES=$(git diff --diff-filter=M --name-only origin/master..master)
+DIFF=$(basename $CIRCLE_COMPARE_URL)
+FILES=$(git diff --diff-filter=M --name-only $DIFF)
 echo $FILES
 
 # from changed files, construct list of those with tests
