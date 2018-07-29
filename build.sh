@@ -2,7 +2,7 @@
 set -x
 
 # get changed files
-FILES=$(git diff --diff-filter=M --name-only $TRAVIS_COMMIT_RANGE)
+FILES=$(git diff --diff-filter=M --name-only origin/master..master)
 echo $FILES
 
 # from changed files, construct list of those with tests
